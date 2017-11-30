@@ -15,13 +15,15 @@ public class RepoAdapter extends RecyclerView.Adapter<RepoAdapter.RepoViewHolder
 private  List<Repo>repoList;
 private  Context context;
 
-    public RepoAdapter(List<Repo>repos, Context context) {
+    public RepoAdapter(List<Repo>repos,Context context) {
     this.repoList=repos;
+    this.context=context;
     }
 
     @Override
     public RepoAdapter.RepoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view  = LayoutInflater.from(parent.getContext()).inflate(R.layout.repo_single_item,parent,false);
+        View view  = LayoutInflater.from(parent.getContext())
+        .inflate(R.layout.repo_single_item,parent,false);
         return new RepoViewHolder(view);
     }
 
@@ -31,7 +33,7 @@ private  Context context;
         holder.repoName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(context, ProjectDetailActivity.class);
                 intent.putExtra("repo",repoList.get(position));
                 context.startActivity(intent);
             }

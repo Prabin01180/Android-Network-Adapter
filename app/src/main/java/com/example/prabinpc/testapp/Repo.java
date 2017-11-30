@@ -5,5 +5,5 @@ import java.io.Serializable;
 
 public class Repo implements Serializable {
     public String name;
-    public String html_url;
+    public String description;
 }

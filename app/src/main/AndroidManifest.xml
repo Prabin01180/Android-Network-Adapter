@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MovieActivity" />
+        <activity android:name=".ProjectDetailActivity" />
     </application>
 
 </manifest>
